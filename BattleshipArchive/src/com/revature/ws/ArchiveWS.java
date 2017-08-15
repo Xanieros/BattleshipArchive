@@ -9,25 +9,15 @@ import javax.jws.WebService;
 
 @WebService
 public class ArchiveWS {
-	ArrayList<Integer> winners = new ArrayList<Integer>();
 	
 	@WebMethod
 	public void archive(int winnerID)
 	{
-		winners.add(winnerID);
-		backup(winners);
-	}
-	
-	public static void backup(ArrayList<Integer> al)
-	{
 		try
 		{
 			File myFile = new File("archiveBackup.log");
-			FileOutputStream fos = new FileOutputStream(myFile);
-			for (Integer integer : al) {
-				fos.write(integer);
-			}
-			
+			FileOutputStream fos = new FileOutputStream(myFile, true);
+			fos.write(winnerID);
 			fos.close();
 		}
 		catch(Exception e)

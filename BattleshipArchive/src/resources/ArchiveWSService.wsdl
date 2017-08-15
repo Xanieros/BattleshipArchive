@@ -32,7 +32,7 @@
   </binding>
   <service name="ArchiveWSService">
     <port name="ArchiveWSPort" binding="tns:ArchiveWSPortBinding">
-      <soap:address location="REPLACE_WITH_ACTUAL_URL"/>
+      <soap:address location="http://ec2-184-73-28-116.compute-1.amazonaws.com:8080/BattleshipArchive"/>
     </port>
   </service>
 </definitions>
