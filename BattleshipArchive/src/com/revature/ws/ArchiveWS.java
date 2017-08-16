@@ -2,15 +2,13 @@ package com.revature.ws;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 
-import javax.jws.WebMethod;
-import javax.jws.WebService;
+import javax.jws.*;
 
-@WebService
-public class ArchiveWS {
+@WebService(endpointInterface = "com.revature.ws.ArchiveWSInterface")
+public class ArchiveWS implements ArchiveWSInterface {
 	
-	@WebMethod
+	@Override
 	public void archive(int winnerID)
 	{
 		try
